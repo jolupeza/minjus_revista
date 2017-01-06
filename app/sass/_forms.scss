@@ -1,0 +1,37 @@
+.Form {
+  &--search {
+    padding-top: 30px;
+    .form-control {
+      @include border-radius(0);
+      border: 1px solid #b4b4b4;
+      border-right: none;
+      height: 36px;
+      &:focus {
+        @include box-shadow(none);
+      }
+      @include input-placeholder {
+        color: $link-color;
+        font-family: "HelveticaNeueLTStd-Roman";
+      }
+    }
+    .input-group-btn {
+      button {
+        @include border-radius(0);
+        border: 1px solid #b4b4b4;
+        border-left: none;
+      }
+    }
+    .Form-icon {
+      &::before {
+        background-image: url('../images/sprites.png');
+        background-repeat: no-repeat;
+        background-position: 0 -20px;
+        content: "";
+        display: inline-block;
+        height: 20px;
+        vertical-align: middle;
+        width: 20px;
+      }
+    }
+  }
+}

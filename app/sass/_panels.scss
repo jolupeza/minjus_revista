@@ -1,0 +1,72 @@
+.PanelGroup {
+  .panel-heading {
+    + .panel-collapse {
+      > .panel-body {
+        border-top: none;
+      }
+    }
+  }
+  .Panel {
+    @include border-radius(0);
+  }
+}
+.Panel {
+  border: none;
+  @include box-shadow(none);
+  padding: 20px 15px;
+  &:nth-child(2n) {
+    background-color: #eee;
+  }
+  .Title {
+    font-size: 1.75em;
+    margin-bottom: 0;
+    a {
+      display: block;
+      position: relative;
+      &::after {
+        background: transparent url('../images/sprites.png') -53px -20px no-repeat;
+        content: "";
+        cursor: pointer;
+        height: 33px;
+        position: absolute;
+        right: 10px;
+        top: -5px;
+        width: 33px;
+      }
+      &:hover, &:focus {
+        text-decoration: none;
+      }
+    }
+  }
+  .panel-heading {
+    &.active {
+      .Title {
+        a {
+          &::after {
+            background-position: -20px -20px;
+          }
+        }
+      }
+    }
+  }
+  .panel-body {
+    padding: 25px 15px;
+    p {
+      strong {
+        font-family: "HelveticaNeue-Bold";
+        font-weight: normal;
+      }
+    }
+    ul {
+      list-style-image: url('../images/list-rombo.png');
+      padding-left: 15px;
+      li {
+        margin-bottom: 15px;
+        strong {
+          font-family: "HelveticaNeue-Bold";
+          font-weight: normal;
+        }
+      }
+    }
+  }
+}

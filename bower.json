@@ -1,0 +1,25 @@
+{
+  "name": "revista",
+  "description": "MINJUS Revista Electrónica",
+  "main": "index.html",
+  "authors": [
+    "José Pérez <jolupeza@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [],
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/lib",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "bootstrap": "^3.3.7",
+    "jquery.easing": "^1.3.1",
+    "jquery-touchswipe": "^1.6.18"
+  }
+}

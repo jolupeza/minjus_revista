@@ -1,0 +1,21 @@
+.Flex {
+  @include display-flex();
+  &--justify {
+    @include justify-content(space-between);
+  }
+  &--wrap {
+    @include flex-wrap(wrap);
+  }
+}
+.Flex-30 {
+  @include flex-basis(30%);
+}
+.Flex-40 {
+  @include flex-basis(40%);
+}
+.Flex-50 {
+  @include flex-basis(50%);
+}
+.Flex-70 {
+  @include flex-basis(70%);
+}

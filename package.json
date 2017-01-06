@@ -1,0 +1,43 @@
+{
+  "name": "revista",
+  "version": "1.0.0",
+  "description": "MINJUS Revista Electrónica",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jolupeza/minjus_revista.git"
+  },
+  "keywords": [
+    "Ministerio",
+    "de",
+    "Justicia",
+    "Revista",
+    "Electrónica"
+  ],
+  "author": "José Pérez <jolupeza@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jolupeza/minjus_revista/issues"
+  },
+  "homepage": "https://github.com/jolupeza/minjus_revista#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-compass": "^2.1.0",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-if": "^2.0.2",
+    "gulp-inject": "^4.2.0",
+    "gulp-jshint": "^2.0.4",
+    "gulp-livereload": "^3.8.1",
+    "gulp-uglify": "^2.0.0",
+    "gulp-uncss": "^1.0.6",
+    "gulp-useref": "^3.1.2",
+    "jshint": "^2.9.4",
+    "jshint-stylish": "^2.2.1",
+    "wiredep": "^4.0.0"
+  }
+}

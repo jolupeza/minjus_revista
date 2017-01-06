@@ -1,0 +1,170 @@
+.Page {
+  padding: 20px 0;
+  position: relative;
+  &--bgi {
+    background-repeat: no-repeat;
+  }
+  &--bgiContain {
+    background-size: contain;
+  }
+  &--bgiCover {
+    background-size: cover;
+  }
+  &--bgiLeft {
+    background-position: 100% 0;
+  }
+  &--bgiCenter {
+    background-position: center center;
+  }
+  &--graySoft {
+    background-color: $graySoft;
+  }
+  p {
+    font-size: 1em;
+  }
+  &--info {
+    p {
+      margin-bottom: 25px;
+    }
+  }
+  &--editor {
+    a {
+      color: $red;
+    }
+    p {
+      margin-bottom: 15px;
+    }
+    strong {
+      font-family: "HelveticaNeue-Bold";
+      font-weight: normal;
+    }
+    h4 {
+      margin-top: 30px;
+    }
+    h4, h5 {
+      font-family: "HelveticaNeue-Bold";
+      text-transform: uppercase;
+    }
+    ul {
+      padding-left: 0;
+      li {
+        list-style-type: none;
+        margin-bottom: 15px;
+      }
+    }
+  }
+  &--nopdbt {
+    padding-bottom: 0
+  }
+}
+.Page-button {
+  margin-top: 30px;
+}
+.Welcome {
+  padding: 50px 0;
+}
+.Contribute {
+  padding: 25px 0;
+  .Button {
+    margin-top: 20px;
+  }
+}
+.Page-figure {
+  border-bottom: 5px solid $red;
+  position: relative;
+  .Title {
+    bottom: 25px;
+    font-size: 3em;
+    left: 10%;
+    margin-bottom: 0;
+    margin-top: 0;
+    position: absolute;
+  }
+}
+.Breadcrumb {
+  list-style-type: none;
+  padding-left: 0;
+  li {
+    display: inline-block;
+    font-family: "HelveticaNeueLTStd-Roman";
+    font-size: 0.875em;
+    vertical-align: top;
+    a {
+      color: $link-color;
+    }
+    &.active, &.item-current {
+      color: $red;
+    }
+    &.separator {
+      margin: 0 10px;
+    }
+  }
+}
+.Page-navigation {
+  margin-top: 25px;
+  ul.page-numbers {
+    margin-bottom: 20px;
+    padding-left: 0;
+    li {
+      display: inline-block;
+      list-style: none;
+      vertical-align: top;
+    }
+    a.page-numbers, span.page-numbers {
+      border: 1px solid #2e3b47;
+      @include border-radius(3px);
+      display: block;
+      padding: 5px 10px;
+    }
+    a.page-numbers {
+      @include transition(all 0.2s ease-in-out);
+      &:hover {
+        background-color: $red;
+        border-color: $red;
+        color: white;
+        text-decoration: none;
+      }
+    }
+    span.current {
+      background-color: $red;
+      border-color: $red;
+      color: white;
+    }
+  }
+}
+.Page-loader {
+  color: $grayDark;
+  font-size: 3em;
+  position: absolute;
+  top: 150px;
+  width: 100%;
+}
+
+.LastFile {
+  margin-bottom: 30px;
+}
+.OldFiles {
+  background-color: #ececec;
+  padding: 40px 0;
+}
+.OldFiles-item-info {
+  margin-top: 20px;
+}
+.Sections {
+  h4 {
+    font-family: "HelveticaNeue-Bold";
+  }
+  ul {
+    margin-bottom: 30px;
+    padding-left: 0;
+    li {
+      font-family: "HelveticaNeue-Light";
+      list-style-type: none;
+      margin-bottom: 5px;
+    }
+  }
+  strong {
+    font-family: "HelveticaNeue-Bold";
+    font-weight: normal;
+  }
+}

@@ -1,0 +1,87 @@
+body {
+  background-color: white;
+  color: $text-color;
+  font-family: "HelveticaNeueLTStd-Roman";
+  font-size: 16px;
+}
+a {
+  color: $link-color;
+}
+.white {
+  color: white;
+}
+.red {
+  color: $red;
+}
+.black {
+  color: $text-color;
+}
+.helvMedium {
+  font-family: "HelveticaNeue-Medium";
+}
+
+.Title {
+  font-family: "HelveticaNeue-Medium";
+  margin-bottom: 20px;
+  &--red {
+    color: $red;
+  }
+  &--bdbGray {
+    &::after {
+      background-color: #000;
+    }
+    span {
+      &::after {
+        background-color: #000;
+      }
+    }
+  }
+  &--bdbWhite {
+    &::after {
+      background-color: white;
+    }
+  }
+  &--white {
+    color: white;
+  }
+  &--bdb {
+    &::after {
+      content: "";
+      display: block;
+      height: 3px;
+      margin-top: 5px;
+      width: 38px;
+    }
+  }
+  &--bdbSpan {
+    &::after {
+      display: none;
+    }
+    span {
+      position: relative;
+      &::after {
+        bottom: -5px;
+        content: "";
+        display: block;
+        height: 3px;
+        left: 0;
+        margin-top: 5px;
+        position: absolute;
+        width: 38px;
+      }
+    }
+  }
+}
+.Title-legend {
+  font-family: "HelveticaNeue-Bold";
+}
+
+.Marker-list {
+  padding-left: 0;
+  li {
+    list-style: none;
+  }
+}
+.Marker-title {
+  margin-top: 0;
+}

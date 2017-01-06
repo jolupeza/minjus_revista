@@ -1,0 +1,13 @@
+{
+    "name": "jolupeza/revista",
+    "description": "MINJUS Revista Electrónica",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jose Perez",
+            "email": "jolupeza@gmail.com"
+        }
+    ],
+    "require": {}
+}

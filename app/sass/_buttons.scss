@@ -1,0 +1,45 @@
+.Button {
+  font-family: "HelveticaNeue-Medium";
+  @include text-shadow(none);
+  @include transition(all 0.2s ease);
+  &--white {
+    background-color: #fff;
+    color: $red;
+    display: inline-block;
+    padding: 10px 30px;
+    &:hover {
+      background-color: $red;
+      color: white;
+      text-decoration: none;
+    }
+    &--bd {
+      border: 1px solid #2b2b2b;
+      color: $link-color;
+    }
+  }
+  &--red {
+    background-color: $red;
+    border: 1px solid transparent;
+    color: white;
+    display: inline-block;
+    padding: 10px 30px;
+    &:hover {
+      background-color: white;
+      border-color: $text-color;
+      color: $text-color;
+      text-decoration: none;
+    }
+  }
+  &--transparent {
+    border: 1px solid white;
+    @include border-radius(3px);
+    color: white;
+    display: inline-block;
+    padding: 10px 30px;
+    &:hover {
+      background-color: white;
+      color: $red;
+      text-decoration: none;
+    }
+  }
+}

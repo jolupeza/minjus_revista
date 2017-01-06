@@ -1,0 +1,28 @@
+.Cards {
+  border: 1px solid #9c9c9c;
+  margin-bottom: 20px;
+  &--flex {
+    @include display-flex();
+  }
+  &--33 {
+    @include flex-basis(31%);
+  }
+}
+.Cards-figure {
+  @include flex-basis(40%);
+}
+.Cards-info {
+  @include flex-basis(60%);
+  h3 {
+    font-family: "HelveticaNeue-Medium";
+    font-size: 1em;
+  }
+  h4 {
+    font-size: 0.875em;
+    font-family: "HelveticaNeue-Bold";
+  }
+  p {
+    font-family: "HelveticaNeue-Light";
+    font-size: 0.875em;
+  }
+}

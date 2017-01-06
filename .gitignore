@@ -10,9 +10,27 @@ wp-content/uploads/
 wp-content/wp-cache-config.php
 wp-content/plugins/hello.php
 
-/.htaccess
+wp-content/plugins/akismet
+wp-content/languages/plugins
+wp-content/languages/themes
+wp-content/themes/twentyfifteen
+wp-content/themes/twentyfourteen
+wp-content/themes/twentysixteen
+
+/wp-admin
+/wp-includes
+
 /license.txt
 /readme.html
 /sitemap.xml
 /sitemap.xml.gz
 
+/resources
+/.sass-cache
+/node_modules
+/app/lib
+!/app/lib/formvalidation
+!/app/lib/jquery.bxslider
+/vendor
+/nbproject
+/.vscode

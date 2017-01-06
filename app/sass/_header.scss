@@ -1,0 +1,199 @@
+.Header {
+  position: relative;
+}
+.Header-top {
+  background-color: $gray;
+}
+.Header-portal {
+  font-family: "HelveticaNeueLTStd-Roman";
+  line-height: 3.58em;
+  margin: 0;
+  &::before {
+    background: transparent url('../images/sprites.png') 0 0 no-repeat;
+    content: "";
+    display: inline-block;
+    height: 15px;
+    margin-right: 10px;
+    vertical-align: middle;
+    width: 15px;
+  }
+  a {
+    border-right: 1px solid #cfcfcf;
+    display: inline-block;
+    padding-right: 15px
+  }
+}
+.Header-navTop {
+
+}
+.Header-navTop-list {
+  margin-bottom: 0;
+  li {
+    border-right: 1px solid #cfcfcf;
+    font-family: "HelveticaNeueLTStd-Roman";
+    font-size: 0.875em;
+    line-height: 3.58em;
+    padding: 0 10px;
+    &:last-child {
+      border-right: none;
+    }
+    &.Social {
+      a {
+        &::before {
+          background-image: url('../images/sprites.png');
+          background-repeat: no-repeat;
+          content: "";
+          display: inline-block;
+          height: 20px;
+          width: 20px;
+        }
+      }
+      &--fb {
+        a {
+          &::before {
+            background-position: -15px 0;
+          }
+        }
+      }
+      &--tw {
+        a {
+          &::before {
+            background-position: -35px 0;
+          }
+        }
+      }
+      &--you {
+        a {
+          &::before {
+            background-position: -55px 0;
+          }
+        }
+      }
+    }
+  }
+}
+.Header-mainMenu {
+  position: absolute;
+  width: 100%;
+  z-index: 9;
+}
+body {
+  &.single-publications {
+    .Header-mainMenu-list {
+      li.menu-item-object-publications {
+        a {
+          &::after {
+            background-color: $red;
+            display: block;
+          }
+        }
+      }
+    }
+  }
+  &.search {
+    .Header-mainMenu-list {
+      li.search {
+        a {
+          &::after {
+            background-color: $red;
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}
+.Header-mainMenu-list {
+  background-color: #fff;
+  border-bottom: 2px solid $red;
+  display: inline-block;
+  margin-bottom: 0;
+  margin-left: 0;
+  > li {
+    z-index: 9;
+    &:hover, &.active, &.current-menu-item, &.current-menu-ancestor {
+      a {
+        &::after {
+          background-color: $red;
+          display: block;
+        }
+      }
+    }
+  }
+  li {
+    padding: 10px 20px;
+    position: relative;
+    &.resalt {
+      background-color: $red;
+      a {
+        color: white;
+      }
+    }
+    &::after {
+      background-color: rgba(black, 0.4);
+      content: "";
+      display: inline-block;
+      height: 20px;
+      position: absolute;
+      right: 0;
+      top: 30%;
+      vertical-align: middle;
+      width: 1px;
+    }
+    &:last-child {
+      &::after {
+        display: none;
+      }
+    }
+    a {
+      color: $link-color;
+      display: block;
+      font-family: "HelveticaNeueLTStd-Roman";
+      @include transition(all 0.2s ease);
+      &::after {
+        background-color: transparent;
+        content: "";
+        display: block;
+        height: 2px;
+        margin: 0 auto;
+        width: 32px;
+      }
+      &:hover {
+        text-decoration: none;
+      }
+    }
+    &:hover {
+      .sub-menu {
+        display: block;
+      }
+    }
+    .sub-menu {
+      background-color: $grayDark;
+      display: none;
+      left: 0;
+      padding: 0;
+      position: absolute;
+      top: 100%;
+      @include transition(all 0.2s ease-in-out);
+      width: 100%;
+      li {
+        border-bottom: 1px solid #4e4d4d;
+        list-style: none;
+        padding: 15px 10px;
+        text-align: center;
+        &::after {
+          display: none;
+        }
+        a {
+          color: white;
+          &::after {
+            display: none
+          }
+        }
+        &.active, &.current-menu-item, &:hover {
+          background-color: #000;
+        }
+      }
+    }
+  }
+}
