@@ -1,4 +1,16 @@
 .Form {
+  .form-control {
+    @include border-radius(0);
+    border: 1px solid #b4b4b4;
+    height: 36px;
+    &:focus {
+      @include box-shadow(none);
+    }
+    @include input-placeholder {
+      color: $link-color;
+      font-family: "HelveticaNeueLTStd-Roman";
+    }
+  }
   &--search {
     padding-top: 30px;
     .form-control {
@@ -33,5 +45,53 @@
         width: 20px;
       }
     }
+  }
+}
+.tml {
+  margin: 0 auto;
+  p {
+    margin: 0 0 15px 0 !important;
+  }
+  label {
+    color: $text-color;
+    margin-bottom: 0;
+  }
+  input {
+    color: $text-color;
+    height: 42px;
+    padding: 5px;
+  }
+  .tml-submit-wrap {
+    text-align: center;
+    input[type="submit"] {
+      background-color: $red;
+      border: 1px solid $red;
+      color: white;
+      padding: 5px 15px;
+      &:hover {
+        background-color: #fff;
+        border-color: $text-color;
+        color: $text-color;
+      }
+    }
+  }
+  .tml-action-links {
+    display: block !important;
+    li {
+      display: inline-block;
+      float: none !important;
+      vertical-align: top;
+    }
+  }
+}
+.tml-login {
+  .tml-rememberme-submit-wrap {
+    display: block !important;
+  }
+  .tml-rememberme-wrap, .tml-submit-wrap {
+    display: block !important;
+  }
+  .tml-submit-wrap {
+    text-align: center !important;
   }
 }

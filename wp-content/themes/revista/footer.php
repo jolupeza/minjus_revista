@@ -4,7 +4,7 @@
       <div class="container">
         <div class="row">
           <?php $locations = get_nav_menu_locations(); ?>
-          <div class="col-md-4">
+          <div class="col-md-4 Prefooter-wrapper">
             <?php
               $menuLeft = 'footer-left-menu';
 
@@ -14,7 +14,7 @@
 
                 if (is_object($menuObject)) :
             ?>
-                <h3 class="h4 Subtitle white text-uppercase"><?php echo $menuObject->name; ?></h3>
+                <h3 class="h4 Subtitle helvBold white text-uppercase"><?php echo $menuObject->name; ?></h3>
 
                 <?php
                   $args = [
@@ -26,8 +26,8 @@
               <?php endif; ?>
             <?php endif; ?>
           </div>
-          <div class="col-md-4">
-            <h3 class="h4 Subtitle white text-uppercase">Contacto e información</h3>
+          <div class="col-md-4 Prefooter-wrapper">
+            <h3 class="h4 Subtitle helvBold white text-uppercase">Contacto e información</h3>
             <h5 class="white text-uppercase">Ministerio de Justicia y Derechos Humanos</h5>
             <ul class="Prefooter-list Prefooter-list--icons">
               <?php if (!empty($options['address'])) : ?>
@@ -44,7 +44,7 @@
               <?php endif; ?>
             </ul>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-4 Prefooter-wrapper">
             <?php
               $menuName = 'footer-links-menu';
 
@@ -54,7 +54,7 @@
 
                 if (is_object($menuObject)) :
             ?>
-                <h3 class="h4 Subtitle white text-uppercase"><?php echo $menuObject->name; ?></h3>
+                <h3 class="h4 Subtitle helvBold white text-uppercase"><?php echo $menuObject->name; ?></h3>
 
                 <?php
                   $args = [
@@ -85,7 +85,29 @@
             </p>
           </div>
           <div class="col-md-4">
+            <?php if (isset($options['display_social_link']) && $options['display_social_link']) : ?>
+              <nav class="Footer-navSocial">
+                <ul class="Footer-navSocial-list">
+                  <?php if (!empty($options['facebook'])) : ?>
+                    <li class="Social Social--fb">
+                      <a href="<?php echo $options['facebook']; ?>" title="Ir a Facebook" target="_blank" rel="noopener noreferrer"><i class="icon-facebook"></i></a>
+                    </li>
+                  <?php endif; ?>
 
+                  <?php if (!empty($options['twitter'])) : ?>
+                    <li class="Social Social--tw">
+                      <a href="<?php echo $options['twitter']; ?>" title="Ir a Twitter" target="_blank" rel="noopener noreferrer"><i class="icon-twitter"></i></a>
+                    </li>
+                  <?php endif; ?>
+
+                  <?php if (!empty($options['youtube'])) : ?>
+                    <li class="Social Social--you">
+                      <a href="<?php echo $options['youtube']; ?>" title="Ir a Youtube" target="_blank" rel="noopener noreferrer"><i class="icon-youtube"></i></a>
+                    </li>
+                  <?php endif; ?>
+                </ul><!-- end Haeder-navTop-list -->
+              </nav><!-- end Header-navTop -->
+            <?php endif; ?>
           </div>
         </div>
       </div>

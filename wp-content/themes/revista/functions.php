@@ -39,6 +39,7 @@ function register_my_menus() {
   register_nav_menus(
     [
       'main-menu' => __( 'Main Menu', THEMEDOMAIN ),
+      'top-menu' => __( 'Top Menu', THEMEDOMAIN ),
       'footer-left-menu' => __( 'Enlaces Footer Izquierda', THEMEDOMAIN ),
       'footer-links-menu' => __( 'Enlaces Footer Derecha', THEMEDOMAIN ),
     ]
@@ -57,6 +58,23 @@ function my_theme_setup() {
   ]);
 }
 add_action('after_setup_theme', 'my_theme_setup');
+
+/***********************************************************************************************/
+/* Add Sidebar Support */
+/***********************************************************************************************/
+if (function_exists('register_sidebar')) {
+  register_sidebar(
+    array(
+      'name' => __('Main Sidebar', THEMEDOMAIN),
+      'id' => 'main-sidebar',
+      'description' => __('The main sidebar area', THEMEDOMAIN),
+      'before_widget' => '<article class="Sidebar-widget">',
+      'after_widget' => '</article><!-- end Sidebar-widget -->',
+      'before_title' => '<div class="Sideber-title"><h3 class="Title Title--red Title--bdb Title--bdbGray">',
+      'after_title' => '</h3></div>'
+    )
+  );
+}
 
 /***************************************/
 /* Custom Breadbcrumbs */
@@ -198,7 +216,7 @@ function custom_breadcrumbs() {
         $get_term_name  = $terms[0]->name;
 
         // Display the tag name
-        echo '<li class="item-current item-tag-' . $get_term_id . ' item-tag-' . $get_term_slug . '"><strong class="bread-current bread-tag-' . $get_term_id . ' bread-tag-' . $get_term_slug . '">' . $get_term_name . '</strong></li>';
+        echo '<li class="item-current item-tag-' . $get_term_id . ' item-tag-' . $get_term_slug . '"><strong class="bread-current bread-tag-' . $get_term_id . ' bread-tag-' . $get_term_slug . '">Etiqueta: ' . $get_term_name . '</strong></li>';
       } elseif ( is_day() ) {
         // Day archive
 
@@ -315,6 +333,69 @@ function get_team_callback()
 }
 
 /***********************************************************/
+/* Register subscriptor via ajax */
+/***********************************************************/
+add_action('wp_ajax_send_article', 'send_article_callback');
+add_action('wp_ajax_nopriv_send_article', 'send_article_callback');
+
+function send_article_callback()
+{
+  $nonce = $_POST['nonce'];
+  $result = array(
+    'result' => false,
+    'error' => ''
+  );
+
+  if (!wp_verify_nonce($nonce, 'revistaajax-nonce')) {
+      die('¡Acceso denegado!');
+  }
+
+  $email = trim($_POST['email']);
+  $post = (int)trim($_POST['post']);
+
+  if (!empty($email) && is_email($email) && $post) {
+    // $options = get_option('muni_custom_settings');
+    $email = sanitize_email($email);
+    $post = sanitize_text_field($post);
+
+    $post = get_post($post);
+
+    $subjectEmail = "Revista MINJUS Artículo Destacado";
+
+    ob_start();
+    $filename = TEMPLATEPATH . '/includes/template-email-send-article.php';
+    if (file_exists($filename)) {
+      include $filename;
+
+      $content = ob_get_contents();
+      ob_get_clean();
+
+      $headers[] = 'From: Revista MINJUS';
+      //$headers[] = 'Reply-To: test@test.com';
+      $headers[] = 'Content-type: text/html; charset=utf-8';
+
+      if (wp_mail($email, $subjectEmail, $content, $headers)) {
+        $result['result'] = true;
+      } else {
+        $result['error'] = 'No se puedo enviar email.';
+      }
+    } else {
+      $result['error'] = 'Plantilla email no encontrada.';
+    }
+  } else {
+    $result['error'] = 'No ha ingresado el correo electrónico.';
+  }
+
+  echo json_encode($result);
+  die();
+}
+
+// Bugs send emails WP 4.6.1
+add_filter('wp_mail_from', function() {
+  return 'webmaster@minjus.gob.pe';
+});
+
+/***********************************************************/
 /* Include posts from authors in the search */
 /***********************************************************/
 add_filter( 'posts_search', 'db_filter_authors_search' );
@@ -363,11 +444,11 @@ function db_filter_user_query( &$user_query ) {
   return $user_query;
 }
 
-
 /****************************************************/
 /* Load Theme Options Page and Custom Widgets */
 /****************************************************/
 require_once(TEMPLATEPATH . '/functions/revista-theme-customizer.php');
+require_once(TEMPLATEPATH . '/functions/widget-send-article.php');
 
 /*
  * Dump helper. Functions to dump variables to the screen, in a nicley formatted manner.

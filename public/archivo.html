@@ -7,9 +7,6 @@
 
     <link rel="stylesheet" href="css/style.min.css">
 
-    <!--link rel="stylesheet" href="lib/formvalidation/dist/css/formValidation.css" />
-    <link rel="stylesheet" href="lib/jquery.bxslider/jquery.bxslider.css" /-->
-
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -19,7 +16,11 @@
   </head>
   <body>
     <header class="Header">
-      <aside class="Header-top">
+      <button class="Header-navToggle js-toggle-slidebar">
+        <i class="Icon"></i>
+      </button>
+
+      <aside class="Header-top hidden-xs">
         <div class="container">
           <div class="row">
             <div class="col-sm-6">
@@ -41,14 +42,15 @@
 
       <div class="container">
         <div class="row">
-          <div class="col-md-8">
+          <div class="col-md-8 col-sm-7 col-xs-9">
             <h1 class="Header-logo">
               <a href="">
-                <img src="images/logo.png" alt="">
+                <img class="img-responsive hidden-xs" src="images/logo.png" alt="">
+                <img class="img-responsive visible-xs-block" src="images/logo-responsive.png" alt="">
               </a>
             </h1><!-- end Header-logo -->
           </div><!-- end col-md-8 -->
-          <div class="col-md-4">
+          <div class="col-md-4 col-sm-5 col-xs-3 hidden-xs">
             <form action="" method="GET" class="Form Form--search">
               <div class="input-group">
                 <input type="text" class="form-control" placeholder="Buscar">
@@ -61,7 +63,7 @@
         </div><!-- end row -->
       </div><!-- end container -->
 
-      <nav class="Header-mainMenu text-center">
+      <nav class="Header-mainMenu text-center hidden-xs">
         <ul class="Header-mainMenu-list list-inline">
           <li><a href="index.html">Inicio</a></li>
           <li>
@@ -80,8 +82,46 @@
       </nav>
     </header><!-- end Header -->
 
+    <section class="Slidebar">
+      <aside class="Slidebar-close js-toggle-slidebar">
+        <i class="glyphicon glyphicon-remove"></i>
+      </aside><!-- end Slidebar-close -->
+
+      <nav class="Slidebar-nav text-center">
+        <ul class="Slidebar-list">
+          <li><a href="index.html">Inicio</a></li>
+          <li class="js-more">
+            <a href="#">Acerca de la revista</a>
+            <ul class="sub-menu">
+              <li><a href="about.html">Sobre la revista</a></li>
+              <li><a href="contacto.html">Datos de contacto</a></li>
+              <li><a href="politicas.html">Políticas y proceso</a></li>
+              <li><a href="normas.html">Normas para autores</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Buscador</a></li>
+          <li class="active"><a href="archivo.html">Archivos</a></li>
+          <li class="resalt"><a href="#">Suscríbete</a></li>
+        </ul>
+      </nav><!-- end Slidebar-nav -->
+
+      <nav class="Slidebar-navSocial">
+        <ul class="Slidebar-navSocial-list">
+          <li class="Social Social--fb">
+            <a href="#" title="Ir a Facebook"><i class="icon-facebook"></i></a>
+          </li>
+          <li class="Social Social--tw">
+            <a href="#" title="Ir a Twitter"><i class="icon-twitter"></i></a>
+          </li>
+          <li class="Social Social--you">
+            <a href="#" title="Ir a Youtube"><i class="icon-youtube"></i></a>
+          </li>
+        </ul><!-- end Haeder-navTop-list -->
+      </nav><!-- end Header-navTop -->
+    </section><!-- end Slidebar -->
+
     <figure class="Page-figure">
-      <img class="img-responsive center-block" src="images/archivosbg.jpg" alt="" />
+      <img class="img-responsive center-block hidden-xs" src="images/archivosbg.jpg" alt="" />
       <h2 class="Title Title--white">Publicaciones</h2>
     </figure><!-- end Page-figure -->
 
@@ -96,10 +136,10 @@
 
             <section class="LastFile">
               <div class="row">
-                <div class="col-md-4">
+                <div class="col-sm-4">
                   <figure><img src="images/publicacion.jpg" alt="" class="img-responsive"></figure>
                 </div>
-                <div class="col-md-8">
+                <div class="col-sm-8">
                   <h2 class="Title Title--red Title--bdb Title--bdbGray">Revista Minjus N° 4</h2>
                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est maxime et autem. Similique, voluptatem ab amet, dolor totam quidem iste dicta labore in vitae quisquam maxime, aliquid ipsam voluptatibus debitis! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas, voluptatum? Quia omnis non necessitatibus veniam nostrum soluta rerum unde, adipisci assumenda maxime eligendi doloribus autem sequi, magni possimus, eos libero.</p>
                   <p class="Page-button"><a href="details.html" class="Button Button--red">Leer revista ></a></p>
@@ -115,7 +155,7 @@
       <section class="OldFiles">
         <div class="container">
           <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-4 col-sm-6">
               <article class="OldFiles-item Flex Flex--justify">
                 <figure class="Flex-40">
                   <img class="img-responsive" src="images/publicacion.jpg" alt="">
@@ -126,7 +166,7 @@
                 </div>
               </article>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 col-sm-6">
               <article class="OldFiles-item Flex Flex--justify">
                 <figure class="Flex-40">
                   <img class="img-responsive" src="images/publicacion.jpg" alt="">
@@ -137,7 +177,7 @@
                 </div>
               </article>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 col-sm-6">
               <article class="OldFiles-item Flex Flex--justify">
                 <figure class="Flex-40">
                   <img class="img-responsive" src="images/publicacion.jpg" alt="">
@@ -156,8 +196,8 @@
     <section class="Prefooter">
       <div class="container">
         <div class="row">
-          <div class="col-md-6">
-            <h3 class="h4 Subtitle white text-uppercase">Herramientas</h3>
+          <div class="col-md-4 Prefooter-wrapper">
+            <h3 class="h4 Subtitle helvBold white text-uppercase">Herramientas</h3>
             <ul class="Prefooter-list">
               <li><a href="#">Directorio General</a></li>
               <li><a href="#">Política de Privacidad</a></li>
@@ -174,8 +214,8 @@
               <li><a href="#">Cheques en cartera</a></li>
             </ul>
           </div>
-          <div class="col-md-3">
-            <h3 class="h4 Subtitle white text-uppercase">Contacto e información</h3>
+          <div class="col-md-4 Prefooter-wrapper">
+            <h3 class="h4 Subtitle helvBold white text-uppercase">Contacto e información</h3>
             <h5 class="white text-uppercase">Ministerio de Justicia y Derechos Humanos</h5>
             <ul class="Prefooter-list Prefooter-list--icons">
               <li><i class="Icon Icon--map"></i>Dirección: Scipión Llona 350, Miraflores, Lima 18.</li>
@@ -184,43 +224,29 @@
               <li><i class="Icon Icon--map"></i>webmaster@minjus.gob.pe</li>
             </ul>
           </div>
-          <div class="col-md-3">
-            <h3 class="h4 Subtitle white text-uppercase">Enlaces de interés</h3>
-            <ul class="Prefooter-list Prefooter-list--icons">
+          <div class="col-md-4 Prefooter-wrapper">
+            <h3 class="h4 Subtitle helvBold white text-uppercase">Enlaces de interés</h3>
+            <ul class="Prefooter-list">
               <li>
-                <a href="#">
-                  <i class="Icon Icon--map"></i>Presidencia de la República
-                </a>
+                <a href="#">Presidencia de la República</a>
               </li>
               <li>
-                <a href="#">
-                  <i class="Icon Icon--map"></i>Presidencia del Consejo de Ministros
-                </a>
+                <a href="#">Presidencia del Consejo de Ministros</a>
               </li>
               <li>
-                <a href="#">
-                  <i class="Icon Icon--map"></i>Portal del Estado Peruano
-                </a>
+                <a href="#">Portal del Estado Peruano</a>
               </li>
               <li>
-                <a href="#">
-                  <i class="Icon Icon--map"></i>INPE
-                </a>
+                <a href="#">INPE</a>
               </li>
               <li>
-                <a href="#">
-                  <i class="Icon Icon--map"></i>SUNARP
-                </a>
+                <a href="#">SUNARP</a>
               </li>
               <li>
-                <a href="#">
-                  <i class="Icon Icon--map"></i>Reforma Procesal Penal
-                </a>
+                <a href="#">Reforma Procesal Penal</a>
               </li>
               <li>
-                <a href="#">
-                  <i class="Icon Icon--map"></i>Política Criminal y Penitenciaria
-                </a>
+                <a href="#">Política Criminal y Penitenciaria</a>
               </li>
             </ul>
           </div>
@@ -238,7 +264,19 @@
             <p class="text-center"><a href="#"><img src="images/logo-footer.jpg" alt=""></a></p>
           </div>
           <div class="col-md-4">
-
+            <nav class="Footer-navSocial">
+              <ul class="Footer-navSocial-list">
+                <li class="Social Social--fb">
+                  <a href="" title="Ir a Facebook" target="_blank" rel="noopener noreferrer"><i class="icon-facebook"></i></a>
+                </li>
+                <li class="Social Social--tw">
+                  <a href="" title="Ir a Twitter" target="_blank" rel="noopener noreferrer"><i class="icon-twitter"></i></a>
+                </li>
+                <li class="Social Social--you">
+                  <a href="" title="Ir a Youtube" target="_blank" rel="noopener noreferrer"><i class="icon-youtube"></i></a>
+                </li>
+              </ul><!-- end Haeder-navTop-list -->
+            </nav><!-- end Header-navTop -->
           </div>
         </div>
       </div>
@@ -251,10 +289,5 @@
 
     <script src="js/vendor.min.js"></script>
     <script src="js/app.min.js"></script>
-
-    <!--script src="lib/formvalidation/dist/js/formValidation.js"></script>
-    <script src="lib/formvalidation/dist/js/framework/bootstrap.js"></script>
-    <script src="lib/formvalidation/dist/js/language/es_ES.js"></script>
-    <script src="lib/jquery.bxslider/jquery.bxslider.js"></script -->
   </body>
 </html>

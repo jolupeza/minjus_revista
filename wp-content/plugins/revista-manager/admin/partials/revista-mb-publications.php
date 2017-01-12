@@ -14,7 +14,9 @@
         
         $pdf = isset( $values['mb_pdf'] ) ? esc_attr($values['mb_pdf'][0]) : '';
         $image = isset( $values['mb_image'] ) ? esc_attr($values['mb_image'][0]) : '';
+        $responsive = isset( $values['mb_responsive'] ) ? esc_attr($values['mb_responsive'][0]) : '';
         $text = (isset($values['mb_text'])) ? $values['mb_text'][0] : '';
+        $index = (isset($values['mb_index'])) ? $values['mb_index'][0] : '';
         
         wp_nonce_field('publications_meta_box_nonce', 'meta_box_nonce');
     ?>
@@ -66,6 +68,28 @@
         </div><!-- end container-upload-file -->
     </fieldset><!-- end GroupFrm -->
     
+    <fieldset class="GroupForm">
+        <legend class="GroupForm-legend">Imagen Responsive Slider</legend>
+
+        <div class="container-upload-file GroupForm-wrapperImage">
+            <p class="btn-add-file">
+                <a title="Agregar imagen" href="javascript:;" class="set-file button button-primary">Añadir</a>
+            </p>
+
+            <div class="hidden media-container">
+                <img src="<?php echo $responsive; ?>" alt="<?php //echo get_post_meta( $post->ID, 'slider-1-alt', true ); ?>" title="<?php //echo get_post_meta( $post->ID, 'slider-1-title', true ); ?>" />
+            </div><!-- .media-container -->
+
+            <p class="hidden">
+                <a title="Qutar imagen" href="javascript:;" class="remove-file button button-secondary">Quitar</a>
+            </p>
+
+            <p class="media-info">
+                <input class="hd-src" type="hidden" name="mb_responsive" value="<?php echo $responsive; ?>" />
+            </p><!-- .media-info -->
+        </div><!-- end container-upload-file -->
+    </fieldset><!-- end GroupFrm -->
+    
     <fieldset>
         <legend>Texto de Slider</legend>
         <p>
@@ -78,6 +102,22 @@
                     'textarea_rows' => 10,
                 );
                 wp_editor($text, 'mb_text', $settings);
+            ?>
+        </p>
+    </fieldset>
+    
+    <fieldset>
+        <legend>Índice de contenido</legend>
+        <p>
+            <label for="mb_index"></label>
+            <?php
+                $settings = array(
+                    'wpautop' => false,
+                    'textarea_name' => 'mb_index',
+                    'media_buttons' => false,
+                    'textarea_rows' => 10,
+                );
+                wp_editor($index, 'mb_index', $settings);
             ?>
         </p>
     </fieldset>

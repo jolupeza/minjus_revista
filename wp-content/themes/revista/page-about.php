@@ -11,20 +11,20 @@
 
     <?php if (has_post_thumbnail()) : ?>
       <figure class="Page-figure">
-        <?php the_post_thumbnail('full', ['class' => 'img-responsive center-block']); ?>
+        <?php the_post_thumbnail('full', ['class' => 'img-responsive center-block hidden-xs']); ?>
         <h2 class="Title Title--white"><?php the_title(); ?></h2>
       </figure><!-- end Page-figure -->
     <?php endif; ?>
 
-    <section class="Page Page--bgi Page--bgiLeft Page--bgiContain" style="background-image: url('<?php echo IMAGES; ?>/welcome.jpg');">
+    <section class="Page Page--bgi Page--bgi--noresponsive Page--bgiLeft Page--bgiContain" style="background-image: url('<?php echo IMAGES; ?>/welcome.jpg');">
       <div class="container">
         <div class="row">
-          <div class="col-md-6">
+          <div class="col-md-8">
             <?php custom_breadcrumbs(); ?>
 
             <?php the_content(); ?>
-          </div><!-- end col-md-6 -->
-          <div class="col-md-6">&nbsp;</div>
+          </div><!-- end col-md-8 -->
+          <div class="col-md-4">&nbsp;</div>
         </div><!-- end row -->
       </div><!-- end container -->
     </section><!-- end Welcome -->
@@ -49,7 +49,7 @@
     if ($the_query->have_posts()) :
   ?>
     <div class="container Page-team">
-      <section class="Flex Flex--justify Flex--wrap">
+      <section class="Flex Flex--wrap Flex-card">
         <?php while ($the_query->have_posts()) : ?>
           <?php $the_query->the_post(); ?>
           <article class="Cards Cards--flex Cards--33">

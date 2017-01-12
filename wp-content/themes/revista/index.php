@@ -21,12 +21,16 @@
           <?php
             $values = get_post_custom(get_the_id());
             $image = isset( $values['mb_image'] ) ? esc_attr($values['mb_image'][0]) : '';
+            $responsive = isset( $values['mb_responsive'] ) ? esc_attr($values['mb_responsive'][0]) : '';
             $text = (isset($values['mb_text'])) ? $values['mb_text'][0] : '';
           ?>
 
           <div class="item <?php echo $active; ?>">
             <?php if (!empty($image)) : ?>
-              <img src="<?php echo $image; ?>" alt="<?php the_title(); ?>" class="img-responsive center-block">
+              <picture>
+                <source class="img-responsive center-block" media="(max-width: 767px)" srcset="<?php echo $responsive; ?>" alt="<?php the_title(); ?>">
+                <img class="img-responsive center-block" src="<?php echo $image; ?>" alt="<?php the_title(); ?>" />
+              </picture>
             <?php endif; ?>
             <div class="carousel-caption text-center">
               <?php
@@ -72,10 +76,10 @@
     while ($the_query->have_posts()) :
       $the_query->the_post();
 ?>
-    <section class="Welcome Page Page--bgi Page--bgiLeft Page--bgiContain" style="background-image: url('<?php echo IMAGES; ?>/welcome.jpg');">
+    <section class="Welcome Page Page--bgi Page--bgi--noresponsive Page--bgiLeft Page--bgiContain" style="background-image: url('<?php echo IMAGES; ?>/welcome.jpg');">
       <div class="container">
         <div class="row">
-          <div class="col-md-6">
+          <div class="col-md-8">
             <h2 class="h2 Title Title--red Title--bdb Title--bdbGray">
               <?php if (has_excerpt()) : ?>
                 <?php echo get_the_excerpt(); ?>
@@ -85,8 +89,8 @@
             </h2>
             <?php the_content(''); ?>
             <p class="Page-button"><a href="<?php the_permalink(); ?>" class="Button Button--white Button--white--bd">conocer más ></a></p>
-          </div><!-- end col-md-6 -->
-          <div class="col-md-6">&nbsp;</div>
+          </div><!-- end col-md-8 -->
+          <div class="col-md-4">&nbsp;</div>
         </div><!-- end row -->
       </div><!-- end container -->
     </section><!-- end Welcome -->
@@ -94,22 +98,11 @@
 <?php endif; ?>
 <?php wp_reset_postdata(); ?>
 
-<?php if (!empty($options['text_contribute']) && !empty($options['link_contribute'])) : ?>
-  <aside class="Contribute Page Page--bgi Page--bgiCenter Page--bgiCover" style="background-image: url('<?php echo IMAGES; ?>/contribute.jpg');">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-8">
-          <h2 class="Title Title--white Title--bdb Title--bdbWhite"><?php echo $options['text_contribute']; ?></h2>
-        </div>
-        <div class="col-md-4">
-          <?php
-            $permalink = get_permalink((int)$options['link_contribute']);
-          ?>
-          <p class="text-center"><a href="<?php echo $permalink; ?>" class="Button Button--transparent">Sí deseo participar</a></p>
-        </div>
-      </div><!-- end row -->
-    </div><!-- end container -->
-  </aside><!-- end Contribute -->
-<?php endif; ?>
+<?php
+  $filepath = TEMPLATEPATH . '/includes/contribute.php';
+  if (file_exists($filepath)) {
+    include $filepath;
+  }
+?>
 
 <?php get_footer(); ?>

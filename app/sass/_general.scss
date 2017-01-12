@@ -16,13 +16,19 @@ a {
 .black {
   color: $text-color;
 }
+.helvBold {
+  font-family: "HelveticaNeue-Bold";
+}
 .helvMedium {
   font-family: "HelveticaNeue-Medium";
 }
 
 .Title {
   font-family: "HelveticaNeue-Medium";
-  margin-bottom: 20px;
+  margin-bottom: 50px;
+  @media only screen and (max-width: 767px) {
+    margin-bottom: 30px;
+  }
   &--red {
     color: $red;
   }
@@ -75,7 +81,9 @@ a {
 .Title-legend {
   font-family: "HelveticaNeue-Bold";
 }
-
+.Subtitle {
+  margin-bottom: 20px;
+}
 .Marker-list {
   padding-left: 0;
   li {

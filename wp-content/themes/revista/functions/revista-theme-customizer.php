@@ -20,6 +20,17 @@ function revista_customize_register($wp_customize) {
         'priority' => 35
     ));
 
+    $wp_customize->add_setting('revista_custom_settings[logo_movil]', array(
+        'default' => IMAGES . '/logo-responsive.png',
+        'type' => 'option'
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'logo_responsive', array(
+        'label' => __('Logo Responsive', THEMEDOMAIN),
+        'section' => 'revista_logo',
+        'settings' => 'revista_custom_settings[logo_responsive]'
+    )));
+
     $wp_customize->add_setting('revista_custom_settings[logo_footer]', array(
         'default' => IMAGES . '/logo-footer.jpg',
         'type' => 'option'

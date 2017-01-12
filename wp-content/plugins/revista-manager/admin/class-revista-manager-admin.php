@@ -404,11 +404,25 @@ class Revista_Manager_Admin
             delete_post_meta($post_id, 'mb_image');
         }
         
+        // Responsive
+        if (isset($_POST['mb_responsive']) && !empty($_POST['mb_responsive'])) {
+            update_post_meta($post_id, 'mb_responsive', esc_attr($_POST['mb_responsive']));
+        } else {
+            delete_post_meta($post_id, 'mb_responsive');
+        }
+        
         // Text
         if (isset($_POST['mb_text']) && !empty($_POST['mb_text'])) {
             update_post_meta($post_id, 'mb_text', wp_kses($_POST['mb_text'], $this->allowed));
         } else {
             delete_post_meta($post_id, 'mb_text');
+        }
+        
+        // Index
+        if (isset($_POST['mb_index']) && !empty($_POST['mb_index'])) {
+            update_post_meta($post_id, 'mb_index', wp_kses($_POST['mb_index'], $this->allowed));
+        } else {
+            delete_post_meta($post_id, 'mb_index');
         }
     }
 
@@ -418,6 +432,69 @@ class Revista_Manager_Admin
     public function render_mb_publications()
     {
         require_once plugin_dir_path(__FILE__).'partials/revista-mb-publications.php';
+    }
+    
+    /**
+     * Registers the meta box that will be used to display all of the post meta data
+     * associated with post type post.
+     */
+    public function cd_mb_posts_add()
+    {
+        add_meta_box(
+            'mb-posts-id',
+            'Otras Configuraciones',
+            array($this, 'render_mb_posts'),
+            'post',
+            'normal',
+            'core'
+        );
+    }
+
+    public function cd_mb_posts_save($post_id)
+    {
+        // Bail if we're doing an auto save
+        if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+            return;
+        }
+
+        // if our nonce isn't there, or we can't verify it, bail
+        if (!isset($_POST['meta_box_nonce']) || !wp_verify_nonce($_POST['meta_box_nonce'], 'posts_meta_box_nonce')) {
+            return;
+        }
+
+        // if our current user can't edit this post, bail
+        if (!current_user_can('edit_post', $post_id)) {
+            return;
+        }
+        
+        // PDF
+        if (isset($_POST['mb_pdf']) && !empty($_POST['mb_pdf'])) {
+            update_post_meta($post_id, 'mb_pdf', esc_attr($_POST['mb_pdf']));
+        } else {
+            delete_post_meta($post_id, 'mb_pdf');
+        }
+        
+        // Publication
+        if( isset( $_POST['mb_publication'] ) && !empty($_POST['mb_publication']) ) {
+            update_post_meta( $post_id, 'mb_publication', esc_attr( $_POST['mb_publication'] ) );
+        } else {
+            delete_post_meta($post_id, 'mb_publication');
+        }
+        
+        // Author
+        if( isset( $_POST['mb_author'] ) && !empty($_POST['mb_author']) ) {
+            update_post_meta( $post_id, 'mb_author', esc_attr( $_POST['mb_author'] ) );
+        } else {
+            delete_post_meta($post_id, 'mb_author');
+        }
+    }
+
+    /**
+     * Requires the file that is used to display the user interface of the post meta box.
+     */
+    public function render_mb_posts()
+    {
+        require_once plugin_dir_path(__FILE__).'partials/revista-mb-posts.php';
     }
     
     /**

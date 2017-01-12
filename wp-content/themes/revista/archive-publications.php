@@ -5,7 +5,7 @@
 ?>
 
 <figure class="Page-figure">
-  <img class="img-responsive center-block" src="<?php echo IMAGES; ?>/archivosbg.jpg" alt="" />
+  <img class="img-responsive center-block hidden-xs" src="<?php echo IMAGES; ?>/archivosbg.jpg" alt="" />
   <h2 class="Title Title--white">Publicaciones</h2>
 </figure><!-- end Page-figure -->
 
@@ -30,14 +30,14 @@
         ?>
             <section class="LastFile">
               <div class="row">
-                <div class="col-md-4">
+                <div class="col-sm-4">
                   <?php if (has_post_thumbnail()) : ?>
                     <figure>
                       <?php the_post_thumbnail('full', ['class' => 'img-responsive']); ?>
                     </figure>
                   <?php endif; ?>
                 </div>
-                <div class="col-md-8">
+                <div class="col-sm-8">
                   <h2 class="Title Title--red Title--bdb Title--bdbGray"><?php the_title(); ?></h2>
                   <?php the_content(''); ?>
                   <p class="Page-button"><a href="<?php the_permalink(); ?>" class="Button Button--red">Leer revista ></a></p>
@@ -73,7 +73,7 @@
         <div class="row">
           <?php while (have_posts()) : ?>
             <?php the_post(); ?>
-            <div class="col-md-4">
+            <div class="col-md-4 col-sm-6">
               <article class="OldFiles-item Flex Flex--justify">
                 <?php if (has_post_thumbnail()) : ?>
                   <figure class="Flex-40">
@@ -119,5 +119,13 @@
     </section><!-- end OldFiles -->
   <?php endif; ?>
 </section><!-- end Page -->
+
+<?php
+  $filepath = TEMPLATEPATH . '/includes/contribute.php';
+
+  if (file_exists($filepath)) {
+    include $filepath;
+  }
+?>
 
 <?php get_footer(); ?>

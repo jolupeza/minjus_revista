@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <figure class="Page-figure">
-  <img src="<?php echo IMAGES; ?>/page-about.jpg" alt="" class="img-responsive center-block">
+  <img src="<?php echo IMAGES; ?>/page-about.jpg" alt="" class="img-responsive center-block hidden-xs">
   <h2 class="Title Title--white">Buscador</h2>
 </figure><!-- end Page-figure -->
 
@@ -19,7 +19,7 @@
               <?php the_post(); ?>
               <article class="Search">
                 <h3 class="helvMedium"><a class="red" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-                <p><a href="<?php the_permalink(); ?>"><?php echo get_permalink(); ?></a></p>
+                <p class="hidden-xs"><a href="<?php the_permalink(); ?>"><?php echo get_permalink(); ?></a></p>
                 <?php the_content(''); ?>
               </article><!-- end Search -->
             <?php endwhile; ?>

@@ -11,7 +11,7 @@
 
     <?php if (has_post_thumbnail()) : ?>
       <figure class="Page-figure">
-        <?php the_post_thumbnail('full', ['class' => 'img-responsive center-block']); ?>
+        <?php the_post_thumbnail('full', ['class' => 'img-responsive center-block hidden-xs']); ?>
         <h2 class="Title Title--white"><?php the_title(); ?></h2>
       </figure><!-- end Page-figure -->
 

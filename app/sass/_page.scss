@@ -1,8 +1,13 @@
 .Page {
-  padding: 20px 0;
+  padding: 20px 0 40px 0;
   position: relative;
   &--bgi {
     background-repeat: no-repeat;
+    &--noresponsive {
+      @media only screen and (max-width: 991px) {
+        background-image: none !important;
+      }
+    }
   }
   &--bgiContain {
     background-size: contain;
@@ -21,10 +26,17 @@
   }
   p {
     font-size: 1em;
+    text-align: justify;
+    word-wrap: break-word;
+  }
+  li {
+    text-align: justify;
   }
   &--info {
     p {
       margin-bottom: 25px;
+      text-align: justify;
+      word-wrap: break-word;
     }
   }
   &--editor {
@@ -33,6 +45,8 @@
     }
     p {
       margin-bottom: 15px;
+      text-align: justify;
+      word-wrap: break-word;
     }
     strong {
       font-family: "HelveticaNeue-Bold";
@@ -50,11 +64,21 @@
       li {
         list-style-type: none;
         margin-bottom: 15px;
+        text-align: justify;
       }
     }
   }
   &--nopdbt {
     padding-bottom: 0
+  }
+  &--nopd {
+    padding: 0
+  }
+}
+.Page-bdr {
+  border-right: 1px solid #7c7c7c;
+  @media only screen and (max-width: 991px) {
+    border-right: none;
   }
 }
 .Page-button {
@@ -72,6 +96,10 @@
 .Page-figure {
   border-bottom: 5px solid $red;
   position: relative;
+  @media only screen and (max-width: 767px) {
+    padding-bottom: 15px;
+    padding-top: 90px;
+  }
   .Title {
     bottom: 25px;
     font-size: 3em;
@@ -79,10 +107,20 @@
     margin-bottom: 0;
     margin-top: 0;
     position: absolute;
+    @media only screen and (max-width: 991px) {
+      bottom: 5px;
+      font-size: 2em;
+    }
+    @media only screen and (max-width: 767px) {
+      color: $red;
+      padding: 0 15px;
+      position: static;
+    }
   }
 }
 .Breadcrumb {
   list-style-type: none;
+  margin-bottom: 40px;
   padding-left: 0;
   li {
     display: inline-block;
@@ -138,6 +176,10 @@
   position: absolute;
   top: 150px;
   width: 100%;
+  z-index: 9;
+  &--50 {
+    top: 50%;
+  }
 }
 
 .LastFile {
@@ -146,6 +188,32 @@
 .OldFiles {
   background-color: #ececec;
   padding: 40px 0;
+  @media only screen and (max-width: 767px) {
+    padding: 20px 0;
+    .Flex-40, .OldFiles-item-info {
+      display: inline-block;
+      margin-right: 15px;
+      vertical-align: top;
+      width: 47%;
+    }
+    .OldFiles-item-info {
+      margin-right: 0;
+      h4 {
+        margin-top: 0;
+      }
+      .Page-button {
+        .Button {
+          padding: 10px 15px;
+        }
+      }
+    }
+  }
+}
+.OldFiles-item {
+  margin-bottom: 15px;
+  @media only screen and (max-width: 767px) {
+    margin-bottom: 25px;
+  }
 }
 .OldFiles-item-info {
   margin-top: 20px;
@@ -166,5 +234,19 @@
   strong {
     font-family: "HelveticaNeue-Bold";
     font-weight: normal;
+  }
+}
+.gde-frame {
+  margin-top: 25px;
+}
+.wsp-pages-list {
+  li.page_item_has_children {
+    .children {
+      li.page_item_has_children {
+        .children {
+          display: none;
+        }
+      }
+    }
   }
 }

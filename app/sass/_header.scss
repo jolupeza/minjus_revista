@@ -1,5 +1,21 @@
 .Header {
   position: relative;
+  @media only screen and (max-width: 767px) {
+    background-color: $red;
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9;
+  }
+  &--transparent {
+    background-color: transparent;
+  }
+}
+.Header-logo {
+  @media only screen and (max-width: 767px) {
+    margin: 5px 0;
+  }
 }
 .Header-top {
   background-color: $gray;
@@ -26,17 +42,23 @@
 .Header-navTop {
 
 }
+.Header-navTop-wrapper {
+  display: inline-block;
+  vertical-align: top;
+}
 .Header-navTop-list {
   margin-bottom: 0;
+  &--noLastBorder {
+    &:last-child {
+      border-right: none;
+    }
+  }
   li {
     border-right: 1px solid #cfcfcf;
     font-family: "HelveticaNeueLTStd-Roman";
     font-size: 0.875em;
     line-height: 3.58em;
     padding: 0 10px;
-    &:last-child {
-      border-right: none;
-    }
     &.Social {
       a {
         &::before {
@@ -70,6 +92,10 @@
         }
       }
     }
+    &.current-menu-item {
+      font-family: "HelveticaNeue-Bold";
+      text-decoration: underline;
+    }
   }
 }
 .Header-mainMenu {
@@ -93,6 +119,18 @@ body {
   &.search {
     .Header-mainMenu-list {
       li.search {
+        a {
+          &::after {
+            background-color: $red;
+            display: block;
+          }
+        }
+      }
+    }
+  }
+  &.single {
+    .Header-mainMenu-list {
+      li.single {
         a {
           &::after {
             background-color: $red;
@@ -195,5 +233,27 @@ body {
         }
       }
     }
+  }
+}
+.Header-navToggle {
+  background-color: transparent;
+  border: none;
+  display: none;
+  cursor: pointer;
+  padding: 15px;
+  position: absolute;
+  right: 0;
+  z-index: 9;
+  .Icon {
+    &::before {
+      background: transparent url('../images/sprites.png') -86px 0 no-repeat;
+      content: "";
+      display: block;
+      height: 31px;
+      width: 35px;
+    }
+  }
+  @media only screen and (max-width: 767px) {
+    display: block;
   }
 }
