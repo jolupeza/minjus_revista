@@ -5,8 +5,12 @@
     <?php the_post(); ?>
 
     <figure class="Page-figure">
-      <?php the_post_thumbnail('full', ['class' => 'img-responsive center-block hidden-xs']); ?>
-      <h2 class="Title Title--white"><?php the_title(); ?></h2>
+      <?php if (has_post_thumbnail()) : ?>
+        <?php the_post_thumbnail('full', ['class' => 'img-responsive center-block hidden-xs']); ?>
+        <h2 class="Title Title--white"><?php the_title(); ?></h2>
+      <?php else : ?>
+        <img src="<?php echo IMAGES; ?>/archivosbg.jpg" alt="" class="img-responsive center-block hidden-xs">
+      <?php endif; ?>
     </figure><!-- end Page-figure -->
 
     <section class="Page">

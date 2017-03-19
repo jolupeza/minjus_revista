@@ -98,7 +98,7 @@ class Revista_Manager
         $this->loader->add_action('init', $admin, 'add_post_type');
         $this->loader->add_action('admin_enqueue_scripts', $admin, 'enqueue_styles');
         $this->loader->add_action('admin_enqueue_scripts', $admin, 'enqueue_scripts');
-        
+
         $this->loader->add_action('add_meta_boxes', $admin, 'cd_mb_team_add');
         $this->loader->add_action('save_post', $admin, 'cd_mb_team_save' );
         $this->loader->add_filter('manage_edit-team_columns', $admin, 'custom_columns_team');
@@ -106,51 +106,14 @@ class Revista_Manager
 
         $this->loader->add_action('add_meta_boxes', $admin, 'cd_mb_pages_add');
         $this->loader->add_action('save_post', $admin, 'cd_mb_pages_save' );
-        
+
         $this->loader->add_action('add_meta_boxes', $admin, 'cd_mb_posts_add');
         $this->loader->add_action('save_post', $admin, 'cd_mb_posts_save' );
-        
+
         $this->loader->add_action('add_meta_boxes', $admin, 'cd_mb_publications_add');
         $this->loader->add_action('save_post', $admin, 'cd_mb_publications_save' );
-        
-        $this->loader->add_action('pre_get_posts', $admin, 'set_publications_wp_search');
-//        
-//        $this->loader->add_action('add_meta_boxes', $admin, 'cd_mb_post_add');
-//        $this->loader->add_action('save_post', $admin, 'cd_mb_post_save' );
-//
-//        $this->loader->add_action('add_meta_boxes', $admin, 'cd_mb_sliders_add');
-//        $this->loader->add_action('save_post', $admin, 'cd_mb_sliders_save' );
-//
-//        $this->loader->add_action('add_meta_boxes', $admin, 'cd_mb_subscribers_add');
-//        $this->loader->add_filter('manage_edit-subscribers_columns', $admin, 'custom_columns_subscribers');
-//        $this->loader->add_action('manage_subscribers_posts_custom_column', $admin, 'custom_column_subscribers');
-//        $this->loader->add_filter('views_edit-subscribers', $admin, 'subscribers_button_view_edit');
-//
-//        $this->loader->add_action('add_meta_boxes', $admin, 'cd_mb_contacts_add');
-//        $this->loader->add_action('init', $admin, 'add_taxonomies_contacts');
-//        $this->loader->add_filter('manage_edit-contacts_columns', $admin, 'custom_columns_contacts');
-//        $this->loader->add_action('manage_contacts_posts_custom_column', $admin, 'custom_column_contacts');
-//        $this->loader->add_filter('views_edit-contacts', $admin, 'contacts_button_view_edit');
-//        
-//        $this->loader->add_action('add_meta_boxes', $admin, 'cd_mb_directories_add');
-//        $this->loader->add_action('save_post', $admin, 'cd_mb_directories_save' );
-//        $this->loader->add_action('init', $admin, 'add_taxonomies_directories');
-//        
-//        $this->loader->add_action('add_meta_boxes', $admin, 'cd_mb_locales_add');
-//        $this->loader->add_action('save_post', $admin, 'cd_mb_locales_save' );
-//        
-//        $this->loader->add_action('add_meta_boxes', $admin, 'cd_mb_books_add');
-//        $this->loader->add_filter('manage_edit-books_columns', $admin, 'custom_columns_books');
-//        $this->loader->add_action('manage_books_posts_custom_column', $admin, 'custom_column_books');
-//        $this->loader->add_filter('views_edit-books', $admin, 'books_button_view_edit');
-//        
-//        $this->loader->add_action('add_meta_boxes', $admin, 'cd_mb_informations_add');
-//        $this->loader->add_action('init', $admin, 'add_taxonomies_deliveries');
-//        $this->loader->add_filter('manage_edit-informations_columns', $admin, 'custom_columns_informations');
-//        $this->loader->add_action('manage_informations_posts_custom_column', $admin, 'custom_column_informations');
-//        $this->loader->add_filter('views_edit-informations', $admin, 'informations_button_view_edit');
 
-//         $this->loader->add_action('init', $admin, 'unregister_post_type');
+        // $this->loader->add_action('pre_get_posts', $admin, 'set_publications_wp_search');
     }
 
     /**

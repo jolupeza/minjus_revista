@@ -96,9 +96,9 @@
             </h1><!-- end Header-logo -->
           </div><!-- end col-md-8 -->
           <div class="col-md-4 col-sm-5 col-xs-3 hidden-xs">
-            <?php if (!is_search() && !is_page('buscador')) : ?>
+            <?php /* if (!is_search() && !is_page('buscador')) : ?>
               <?php get_search_form(); ?>
-            <?php endif; ?>
+            <?php endif; */?>
           </div><!-- end col-md-4 -->
         </div><!-- end row -->
       </div><!-- end container -->
