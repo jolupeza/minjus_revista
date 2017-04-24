@@ -16,3 +16,14 @@
 @import "search";
 @import "sidebar";
 @import "slidebar";
+
+@media only print {
+  a {
+    &:link, &:visited {
+      &:after {
+        content: "";
+        display: none;
+      }
+    }
+  }
+}

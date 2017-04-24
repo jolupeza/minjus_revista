@@ -33,7 +33,7 @@ a {
   font-family: "HelveticaNeue-Medium";
   margin-bottom: 50px;
 }
-@media only screen and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .Title {
     margin-bottom: 30px;
   }
@@ -169,7 +169,7 @@ a {
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
 }
-@media only screen and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .Flex {
     display: block;
   }
@@ -201,7 +201,7 @@ a {
   flex-basis: 70%;
 }
 
-@media only screen and (max-width: 991px) {
+@media screen and (max-width: 991px) {
   .Flex-card {
     -webkit-justify-content: space-between;
     justify-content: space-between;
@@ -224,7 +224,7 @@ a {
   box-shadow: none;
   padding: 20px 15px;
 }
-@media only screen and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .Panel {
     padding: 0;
   }
@@ -250,7 +250,7 @@ a {
   top: -5px;
   width: 33px;
 }
-@media only screen and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .Panel .Title a::after {
     right: 0;
     top: 0;
@@ -284,7 +284,7 @@ a {
 .Header {
   position: relative;
 }
-@media only screen and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .Header {
     background-color: #e51a23;
     padding: 10px 0;
@@ -298,7 +298,7 @@ a {
   background-color: transparent;
 }
 
-@media only screen and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .Header-logo {
     margin: 5px 0;
   }
@@ -497,7 +497,7 @@ body.single .Header-mainMenu-list li.single a::after {
   height: 31px;
   width: 35px;
 }
-@media only screen and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .Header-navToggle {
     display: block;
   }
@@ -510,7 +510,7 @@ body.single .Header-mainMenu-list li.single a::after {
 .Page--bgi {
   background-repeat: no-repeat;
 }
-@media only screen and (max-width: 991px) {
+@media screen and (max-width: 991px) {
   .Page--bgi--noresponsive {
     background-image: none !important;
   }
@@ -580,7 +580,7 @@ body.single .Header-mainMenu-list li.single a::after {
 .Page-bdr {
   border-right: 1px solid #7c7c7c;
 }
-@media only screen and (max-width: 991px) {
+@media screen and (max-width: 991px) {
   .Page-bdr {
     border-right: none;
   }
@@ -605,7 +605,7 @@ body.single .Header-mainMenu-list li.single a::after {
   border-bottom: 5px solid #e51a23;
   position: relative;
 }
-@media only screen and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .Page-figure {
     padding-bottom: 15px;
     padding-top: 90px;
@@ -619,13 +619,13 @@ body.single .Header-mainMenu-list li.single a::after {
   margin-top: 0;
   position: absolute;
 }
-@media only screen and (max-width: 991px) {
+@media screen and (max-width: 991px) {
   .Page-figure .Title {
     bottom: 5px;
     font-size: 2em;
   }
 }
-@media only screen and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .Page-figure .Title {
     color: #e51a23;
     padding: 0 15px;
@@ -712,7 +712,7 @@ body.single .Header-mainMenu-list li.single a::after {
   background-color: #ececec;
   padding: 40px 0;
 }
-@media only screen and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .OldFiles {
     padding: 20px 0;
   }
@@ -736,7 +736,7 @@ body.single .Header-mainMenu-list li.single a::after {
 .OldFiles-item {
   margin-bottom: 15px;
 }
-@media only screen and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .OldFiles-item {
     margin-bottom: 25px;
   }
@@ -902,12 +902,12 @@ body.single .Header-mainMenu-list li.single a::after {
   padding: 0;
   top: 20%;
 }
-@media only screen and (max-width: 991px) {
+@media screen and (max-width: 991px) {
   .Carousel--home .carousel-caption {
     top: 50px;
   }
 }
-@media only screen and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .Carousel--home .carousel-caption {
     top: 20%;
   }
@@ -917,7 +917,7 @@ body.single .Header-mainMenu-list li.single a::after {
   font-family: "HelveticaNeue-Medium";
   font-size: 3em;
 }
-@media only screen and (max-width: 991px) {
+@media screen and (max-width: 991px) {
   .Carousel--home .carousel-caption h3 {
     font-size: 2em;
     margin-top: 10px;
@@ -928,7 +928,7 @@ body.single .Header-mainMenu-list li.single a::after {
   font-family: "HelveticaNeue-Light";
   font-size: 1.5em;
 }
-@media only screen and (max-width: 991px) {
+@media screen and (max-width: 991px) {
   .Carousel--home .carousel-caption p {
     font-size: 1.125em;
   }
@@ -995,13 +995,13 @@ body.single .Header-mainMenu-list li.single a::after {
 .Prefooter .Subtitle {
   margin-bottom: 30px;
 }
-@media only screen and (max-width: 991px) {
+@media screen and (max-width: 991px) {
   .Prefooter .Subtitle {
     margin-bottom: 15px;
   }
 }
 
-@media only screen and (max-width: 991px) {
+@media screen and (max-width: 991px) {
   .Prefooter-wrapper {
     margin-bottom: 35px;
   }
@@ -1016,7 +1016,7 @@ body.single .Header-mainMenu-list li.single a::after {
   list-style: none;
   margin-bottom: 5px;
 }
-@media only screen and (max-width: 991px) {
+@media screen and (max-width: 991px) {
   .Prefooter-list li {
     margin-bottom: 15px;
   }
@@ -1051,7 +1051,7 @@ body.single .Header-mainMenu-list li.single a::after {
   font-family: "HelveticaNeue-Light";
   font-size: 0.75em;
 }
-@media only screen and (max-width: 991px) {
+@media screen and (max-width: 991px) {
   .Footer p {
     margin-bottom: 25px;
     text-align: center;
@@ -1068,7 +1068,7 @@ body.single .Header-mainMenu-list li.single a::after {
   margin: 0 0 0 auto;
   padding-left: 0;
 }
-@media only screen and (max-width: 991px) {
+@media screen and (max-width: 991px) {
   .Footer-navSocial-list {
     margin: 0 auto;
   }
@@ -1101,7 +1101,7 @@ body.single .Header-mainMenu-list li.single a::after {
   -webkit-flex-basis: 32%;
   flex-basis: 32%;
 }
-@media only screen and (max-width: 991px) {
+@media screen and (max-width: 991px) {
   .Cards--33 {
     -webkit-flex-basis: 48%;
     flex-basis: 48%;
@@ -1218,7 +1218,7 @@ body.single .Header-mainMenu-list li.single a::after {
   margin-top: 100px;
   overflow: hidden;
 }
-@media only screen and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .Slidebar-nav {
     margin-top: 70px;
   }
@@ -1253,7 +1253,7 @@ body.single .Header-mainMenu-list li.single a::after {
 .Slidebar-list li a .icons {
   margin-right: 15px;
 }
-@media only screen and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .Slidebar-list li a {
     font-size: 1.5em;
   }
@@ -1289,12 +1289,12 @@ body.single .Header-mainMenu-list li.single a::after {
 .Slidebar-list li .sub-menu li a {
   font-size: 1.375em;
 }
-@media only screen and (max-width: 600px) {
+@media screen and (max-width: 600px) {
   .Slidebar-list {
     width: 80%;
   }
 }
-@media only screen and (max-width: 450px) {
+@media screen and (max-width: 450px) {
   .Slidebar-list {
     width: 90%;
   }
@@ -1342,4 +1342,11 @@ body.single .Header-mainMenu-list li.single a::after {
 .Slidebar-navLogin-list li.current-menu-item a {
   font-family: "HelveticaNeue-Bold";
   text-decoration: underline;
+}
+
+@media only print {
+  a:link:after, a:visited:after {
+    content: "";
+    display: none;
+  }
 }

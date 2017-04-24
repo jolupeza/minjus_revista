@@ -4,7 +4,7 @@
   &--bgi {
     background-repeat: no-repeat;
     &--noresponsive {
-      @media only screen and (max-width: 991px) {
+      @media screen and (max-width: 991px) {
         background-image: none !important;
       }
     }
@@ -77,7 +77,7 @@
 }
 .Page-bdr {
   border-right: 1px solid #7c7c7c;
-  @media only screen and (max-width: 991px) {
+  @media screen and (max-width: 991px) {
     border-right: none;
   }
 }
@@ -96,7 +96,7 @@
 .Page-figure {
   border-bottom: 5px solid $red;
   position: relative;
-  @media only screen and (max-width: 767px) {
+  @media screen and (max-width: 767px) {
     padding-bottom: 15px;
     padding-top: 90px;
   }
@@ -107,11 +107,11 @@
     margin-bottom: 0;
     margin-top: 0;
     position: absolute;
-    @media only screen and (max-width: 991px) {
+    @media screen and (max-width: 991px) {
       bottom: 5px;
       font-size: 2em;
     }
-    @media only screen and (max-width: 767px) {
+    @media screen and (max-width: 767px) {
       color: $red;
       padding: 0 15px;
       position: static;
@@ -188,7 +188,7 @@
 .OldFiles {
   background-color: #ececec;
   padding: 40px 0;
-  @media only screen and (max-width: 767px) {
+  @media screen and (max-width: 767px) {
     padding: 20px 0;
     .Flex-40, .OldFiles-item-info {
       display: inline-block;
@@ -211,7 +211,7 @@
 }
 .OldFiles-item {
   margin-bottom: 15px;
-  @media only screen and (max-width: 767px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 25px;
   }
 }

@@ -14,7 +14,7 @@
   border: none;
   @include box-shadow(none);
   padding: 20px 15px;
-  @media only screen and (max-width: 767px) {
+  @media screen and (max-width: 767px) {
     padding: 0;
   }
   &:nth-child(2n) {
@@ -35,7 +35,7 @@
         right: 10px;
         top: -5px;
         width: 33px;
-        @media only screen and (max-width: 767px) {
+        @media screen and (max-width: 767px) {
           right: 0;
           top: 0;
         }

@@ -26,7 +26,7 @@ a {
 .Title {
   font-family: "HelveticaNeue-Medium";
   margin-bottom: 50px;
-  @media only screen and (max-width: 767px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 30px;
   }
   &--red {

@@ -7,7 +7,7 @@
   }
   &--33 {
     @include flex-basis(32%);
-    @media only screen and (max-width: 991px) {
+    @media screen and (max-width: 991px) {
       @include flex-basis(48%);
       margin-right: 0;
     }

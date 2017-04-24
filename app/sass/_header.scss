@@ -1,6 +1,6 @@
 .Header {
   position: relative;
-  @media only screen and (max-width: 767px) {
+  @media screen and (max-width: 767px) {
     background-color: $red;
     padding: 10px 0;
     position: fixed;
@@ -13,7 +13,7 @@
   }
 }
 .Header-logo {
-  @media only screen and (max-width: 767px) {
+  @media screen and (max-width: 767px) {
     margin: 5px 0;
   }
 }
@@ -253,7 +253,7 @@ body {
       width: 35px;
     }
   }
-  @media only screen and (max-width: 767px) {
+  @media screen and (max-width: 767px) {
     display: block;
   }
 }
